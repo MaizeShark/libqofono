@@ -127,14 +127,14 @@ This diagram shows the system `libqofono` in the context of its users and depend
 <summary>C1: System Context Diagram</summary>
 
 ```mermaid
-C4Context
+C4Container
     title System Context Diagram for libqofono
 
-    actor User as "User"
+    Person(User,User,)
 
     System_Boundary(c1, "Client Application") {
-        Component(libqofono, "libqofono", "C++ Qt Library", "Provides a high-level API for telephony functions.")
-        Component(app_ui, "Application UI", "Qt/QML", "User interface for making calls, sending messages, etc.")
+        Container(app_ui, "Application UI", "Qt/QML", "User interface for making calls, sending messages, etc.")
+        Container(libqofono, "libqofono", "C++ Qt Library", "Provides a high-level API for telephony functions.")
     }
 
     System_Ext(ofono, "oFono Daemon", "System Service providing a D-Bus API for telephony hardware.")
@@ -158,7 +158,7 @@ This diagram breaks down the system into its high-level technical building block
 C4Container
     title Container Diagram for libqofono-based Application
 
-    actor User as "User"
+    Person(User,User,)
 
     System_Boundary(app_boundary, "Telephony Application") {
         Container(qt_app, "Qt Application", "C++/QML", "The client application that links against libqofono.")
