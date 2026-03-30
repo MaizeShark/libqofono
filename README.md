@@ -215,9 +215,11 @@ The library provides a programmatic C++/QML API, not a network API. Interaction 
 | `QOfonoMessageManager` | Manages SMS messages. |
 | `QOfonoConnectionManager` | Manages cellular data connections. |
 
-### Request/Response Format
+### QML API
 
-Interactions are asynchronous. Methods that trigger a D-Bus call typically return a `QDBusPendingCallWatcher`. The application connects to the `finished()` signal of this watcher to get the result or handle errors. State changes from oFono (e.g., an incoming call) are communicated proactively via Qt signals, which the application can connect to.
+The library includes a QML plugin that exposes telephony features to Qt Quick. For detailed information and examples on how to use `libqofono` in QML, please refer to the:
+
+*   **[QML Usage Guide](docs/QML_USAGE.md)**
 
 ## Development Notes
 
